@@ -127,6 +127,9 @@ Or you can use the web3 library itself
 ```javascript
 import Web3 from 'web3';
 
+// Initialize new web3 instance with the given provider
+const web3 = new Web3(Web3.givenProvider);
+
 // Our endpoint data for the transaction
 const { data } = await service.getQuote({
   buyTokenAddress: '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
@@ -134,5 +137,6 @@ const { data } = await service.getQuote({
   sellTokenAmount: '1000000000000000000',
 });
 
-// Web3 library instead of
+// Finally do the transaction on current wallet
+const receipt = await web3.eth.sendTransaction(res.data);
 ```

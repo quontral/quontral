@@ -1,6 +1,6 @@
 {
   "name": "quontral",
-  "version": "1.0.16",
+  "version": "1.0.20",
   "description": "Dex API and Web3 library as a service for enterprise applications",
   "main": "index.js",
   "bin": "index.js",
