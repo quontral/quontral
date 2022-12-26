@@ -104,3 +104,35 @@ service.setAllowance({
   sellTokenAddress: '0x3019bf2a2ef8040c242c9a4c5c4bd4c81678b2a1', // token address to create allowance for
 });
 ```
+
+## 5. Sending transaction using api data
+
+There are some utility functions which can help you build your dex even more quicker,
+
+```javascript
+// ...
+
+const { data } = await service.getQuote({
+  buyTokenAddress: '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
+  sellTokenAddress: '0x3019bf2a2ef8040c242c9a4c5c4bd4c81678b2a1',
+  sellTokenAmount: '1000000000000000000',
+});
+
+// This will create an allowance based on your params on your web3 wallet for the desired token.
+const receipt = await service.sendTransaction(data);
+```
+
+Or you can use the web3 library itself
+
+```javascript
+import Web3 from 'web3';
+
+// Our endpoint data for the transaction
+const { data } = await service.getQuote({
+  buyTokenAddress: '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
+  sellTokenAddress: '0x3019bf2a2ef8040c242c9a4c5c4bd4c81678b2a1',
+  sellTokenAmount: '1000000000000000000',
+});
+
+// Web3 library instead of
+```
