@@ -1,12 +1,12 @@
 {
   "name": "quontral",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "description": "Dex API and Web3 library as a service for enterprise applications",
   "main": "index.js",
   "bin": "index.js",
   "scripts": {
     "build": "tsc",
-    "start": "node build/index.js"
+    "start": "node index.js"
   },
   "keywords": [
     "web3",

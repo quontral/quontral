@@ -1,15 +1,14 @@
 // MODULES
-import Web3 from 'web3';
 import axios from 'axios';
 
 // CONFIG
 import config from './lib/config.js';
 
 // SERVICES
-import { getPrice, getQuote, setAllowance, sendTransaction } from './lib/services.js';
+import services from './lib/services.js';
 
 // UTILS
-import { displayFloat, connectWallet } from './lib/utils.js';
+import utils from './lib/utils.js';
 
 class Quontral {
   constructor({ apiKey, chainId = 56 }) {
@@ -30,20 +29,19 @@ class Quontral {
     };
 
     this.utils = {
-      displayFloat,
-      connectWallet,
+      displayFloat: utils.displayFloat,
+      connectWallet: utils.connectWallet,
+      addDots: utils.addDots,
     };
   }
 }
 
 // API Endpoint services
-Quontral.prototype.getPrice = getPrice;
-Quontral.prototype.getQuote = getQuote;
+Quontral.prototype.getPrice = services.getPrice;
+Quontral.prototype.getQuote = services.getQuote;
 
-// Wallet services
-
-// Create a allowance pool on current provider wallet
-Quontral.prototype.setAllowance = setAllowance;
-Quontral.prototype.sendTransaction = sendTransaction;
+// Web3 services
+Quontral.prototype.setAllowance = services.setAllowance;
+Quontral.prototype.sendTransaction = services.sendTransaction;
 
 export default Quontral;
