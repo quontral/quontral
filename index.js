@@ -36,11 +36,9 @@ class Quontral {
   }
 }
 
-// API Endpoint services
+// Service bindings
 Quontral.prototype.getPrice = services.getPrice;
 Quontral.prototype.getQuote = services.getQuote;
-
-// Web3 services
 Quontral.prototype.setAllowance = services.setAllowance;
 Quontral.prototype.sendTransaction = services.sendTransaction;
 

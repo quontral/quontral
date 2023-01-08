@@ -21,10 +21,15 @@
     <img alt="bundlephobia" src="https://img.shields.io/bundlephobia/minzip/quontral" />
   <p>
   </p>
+  <h3>What is Quontral?</h3>
+  <br />
   <p>
-    Dex API and Web3 library as a service for enterprise applications
+    Dex API endpoints and JavaScript library for Web3 applications
   </p>
   <br/>
+  <p>
+    Quontral is developing an API technology that provides end-to-end liquidity endpoints. Developers who want to develop DEX or dApp can use Quontral API for token swap transactions. Quontral sends requests to 6 different liquidity pools at the same time. In this way, it finds the most suitable price match and shows it to the user.
+  </p>
 </div>
 
 ---
@@ -34,7 +39,8 @@
 - Dex API endpoints for Web3 transactions
 - Web3 wallet configurations/authentications (login/sign)
 - Token allowances for web3 wallets and sending transactions
-- Handling big numbers and floating points.
+- Handling big numbers and floating points
+- utility functions to help you build your dex
 
 ... and much more. Check the [official Quontral docs](https://docs.quontral.com/) for more details.
 
@@ -107,8 +113,6 @@ service.setAllowance({
 
 ## 5. Sending transaction using api data
 
-There are some utility functions which can help you build your dex even more quicker,
-
 ```javascript
 // ...
 
@@ -118,7 +122,7 @@ const { data } = await service.getQuote({
   sellTokenAmount: '1000000000000000000',
 });
 
-// This will create an allowance based on your params on your web3 wallet for the desired token.
+// Send the transaction request on the current web3 wallet provider with the given api data of quontral
 const receipt = await service.sendTransaction(data);
 ```
 
