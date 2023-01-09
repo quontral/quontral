@@ -39,6 +39,7 @@ class Quontral {
 // Service bindings
 Quontral.prototype.getPrice = services.getPrice;
 Quontral.prototype.getQuote = services.getQuote;
+Quontral.prototype.sign = services.sign;
 Quontral.prototype.setAllowance = services.setAllowance;
 Quontral.prototype.sendTransaction = services.sendTransaction;
 
