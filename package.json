@@ -1,6 +1,6 @@
 {
   "name": "quontral",
-  "version": "1.0.24",
+  "version": "1.0.26",
   "description": "Dex API endpoints and Token Swap library for Web3 applications",
   "main": "index.js",
   "bin": "index.js",

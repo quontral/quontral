@@ -144,3 +144,12 @@ const { data } = await service.getQuote({
 // Finally do the transaction on current wallet
 const receipt = await web3.eth.sendTransaction(res.data);
 ```
+
+## 6. Signin current Web3 wallet
+
+```javascript
+// ...
+
+// You can use these data pieces to save the users wallet credentials when signed
+const { message, signature } = await service.sign({ address: '0x66E5869be1309a543A752aA24CfA251E86234fcc', domain: 'quontral.com', uri: 'https://app.quontral.com' });
+```

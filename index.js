@@ -20,10 +20,11 @@ class Quontral {
       throw new Error('Api key is not provided in init');
     }
 
-    axios.get('https://api.quontral.com/v1/core/check-apikey/' + apiKey);
+    axios.get(config.api.domain + '/v1/core/check-apikey/' + apiKey);
 
     this.config = {
       ERC20_ABI: config.ERC20_ABI,
+      api: config.api,
       apiKey: apiKey,
       chainId: chainId,
     };
@@ -36,7 +37,7 @@ class Quontral {
   }
 }
 
-// Service bindings
+// Service binds
 Quontral.prototype.getPrice = services.getPrice;
 Quontral.prototype.getQuote = services.getQuote;
 Quontral.prototype.sign = services.sign;
