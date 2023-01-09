@@ -24,7 +24,7 @@
   <h3>What is Quontral?</h3>
   <br />
   <p>
-    Dex API endpoints and JavaScript library for Web3 applications
+    Dex API endpoints and Token Swap library for Web3 applications
   </p>
   <br/>
   <p>
